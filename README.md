@@ -5,4 +5,4 @@
 1. 定义资源 (Resource)
 2. 构建 WebService (路由)
 3. 注册到容器()
-4. 启动服务。# go-for-restful
+4. 启动服务。
