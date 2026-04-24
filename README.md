@@ -23,3 +23,11 @@ Route 表示一条请求路由记录，即 Resource 的 URL Path（URI），从�
 # Container
 Container 表示一个 Web Server（服务器），由多个 WebServices 组成，此外还包含了若干个 Filters（过滤器）、一个 http.ServeMux 多路复用器，以及一个 dispatch。go-restful 从 Container 开始将路由分发给各个 WebService，再由 WebService 分发给具体的 Handler 函数，这些过程都在 dispatch 中实现。
 
+# 安装 Swagger UI 
+```bash
+docker pull swaggerapi/swagger-ui
+
+# 在 openapi.json 所在目录下
+docker run --rm --network=host -e SWAGGER_JSON=/app/openapi.json -v .:/app swaggerapi/swagger-ui
+curl http://host:8080
+```
