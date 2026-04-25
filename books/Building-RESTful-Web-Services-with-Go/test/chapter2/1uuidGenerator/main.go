@@ -1,3 +1,6 @@
+// TODO: http.handler 接口实现;
+//       ServeHTTP 方法是其他所有Mux的注册的地方
+
 package main
 
 import (

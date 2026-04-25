@@ -1,3 +1,6 @@
+//TODO: http.HandleFunc 函数;
+//      使用默认的 Mux： http.DefaultServeMux
+
 package main
 
 import (
