@@ -25,7 +25,6 @@ func ArticleHandler(resp http.ResponseWriter, req *http.Request) {
 
 func main() {
 	// TODO: 匹配路径参数;
-	router.UseEncodedPath()
 	router.HandleFunc("/articles/{category}/{id:[0-9]+}", ArticleHandler).Name("articleRouter")
 
 	srv := &http.Server{
