@@ -37,7 +37,7 @@ func RedirectOriginalURL(resp http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)
 	_, _ = fmt.Fprintf(resp, "%s", db[vars["url"]])
 	fmt.Printf("%v\n", db)
-	
+
 }
 
 func main() {
