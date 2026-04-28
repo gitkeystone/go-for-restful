@@ -15,6 +15,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 // 中间件本质是一个闭包函数
 // 中间件：对业务逻辑处理器的封装，返回封装过的处理器
 // handler -> handler wrapper
+// 中间结构：预处理 - 业务逻辑处理（处理器） - 后处理
 func middleware(originalHandler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		//请求阶段的中间件逻辑
@@ -24,7 +25,7 @@ func middleware(originalHandler http.Handler) http.Handler {
 		// TODO: 转移控制权，交还给业务HTTP处理器
 		originalHandler.ServeHTTP(w, r)
 
-		//相应阶段的中间件逻辑
+		//响应阶段的中间件逻辑
 		fmt.Println("Executing middleware after response phase!")
 	})
 }
