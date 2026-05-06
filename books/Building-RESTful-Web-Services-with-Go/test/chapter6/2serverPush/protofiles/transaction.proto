@@ -1,0 +1,24 @@
+// [START declaration]
+syntax = "proto3";
+package protofiles;
+// [END declaration]
+
+// [START go_declaration]
+option go_package = ".;protofiles"; // 路径;包名
+// [END go_declaration]
+
+message TransactionRequest {
+  string from = 1;
+  string to = 2;
+  float amount = 3;
+}
+
+message TransactionResponse {
+  string status = 1;
+  int32 step = 2;
+  string description = 3;
+}
+
+service MoneyTransaction {
+  rpc MakeTransaction (TransactionRequest) returns (stream TransactionResponse){}
+}
