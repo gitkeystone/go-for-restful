@@ -1,0 +1,22 @@
+// [START declaration]
+syntax = "proto3";
+package protofiles;
+// [END declaration]
+
+// [START go_declaration]
+option go_package = ".;protofiles"; // 路径;包名
+// [END go_declaration]
+
+service Encrypter {
+  rpc Encrypt (Request) returns (Response) {}
+  rpc Decrypt (Request) returns (Response) {}
+}
+
+message Request {
+  string message = 1;
+  string key = 2;
+}
+
+message Response {
+  string result = 1;
+}
